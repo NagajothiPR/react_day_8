@@ -1,0 +1,304 @@
+/* Reset and base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+  --bg-light: #f7f9fc;
+  --bg-dark: #121212;
+  --text-light: #121212;
+  --text-dark: #f7f9fc;
+  --primary: #3b82f6;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --warning: #facc15;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(255, 255, 255, 0.1);
+}
+
+body.light {
+  --bg: var(--bg-light);
+  --text: var(--text-light);
+  --shadow: var(--shadow-light);
+}
+
+body.dark {
+  --bg: var(--bg-dark);
+  --text: var(--text-dark);
+  --shadow: var(--shadow-dark);
+}
+
+.todo-section {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: var(--bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+/* Input group */
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.input-task,
+.input-date {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-task:focus,
+.input-date:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.btn-add {
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-add:hover {
+  background-color: #2563eb;
+}
+
+/* Filter buttons */
+.filter-group {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.btn-filter {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.25rem 1rem;
+  margin: 0 0.25rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn-filter:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-filter.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.no-tasks {
+  text-align: center;
+  color: #888;
+  padding: 1rem 0;
+}
+
+/* Task item */
+.task-item {
+  background-color: var(--bg);
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.task-item:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+  border-color: var(--primary);
+}
+
+.task-checkbox {
+  margin-right: 1rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Completed task style */
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #888;
+  opacity: 0.7;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 1.1rem;
+  user-select: none;
+  cursor: default;
+  padding-right: 1rem;
+  transition: color 0.3s;
+}
+
+/* Due date with colors */
+.due-date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 0.75rem;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.due-normal {
+  color: #555;
+}
+
+.due-today {
+  color: var(--warning);
+  font-weight: 700;
+}
+
+.due-overdue {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn-edit,
+.btn-delete,
+.btn-save,
+.btn-cancel {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.3s;
+}
+
+.btn-edit:hover {
+  color: var(--primary);
+}
+
+.btn-delete:hover {
+  color: var(--danger);
+}
+
+.btn-save:hover {
+  color: var(--success);
+}
+
+.btn-cancel:hover {
+  color: #999;
+}
+
+/* Editing inputs */
+.edit-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--primary);
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.edit-date {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--primary);
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Footer */
+.footer-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.btn-clear {
+  background-color: var(--danger);
+  border: none;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-clear:hover {
+  background-color: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .input-group {
+    flex-direction: column;
+  }
+  .input-task,
+  .input-date,
+  .btn-add {
+    width: 100%;
+  }
+  .btn-add {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
+  .task-item {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .due-date {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .btn-edit, .btn-delete {
+    order: 4;
+  }
+}
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+}
