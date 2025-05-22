@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TodoListApp from './TodoListApp';
-import './app.css';
+import './App.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('darkMode') === 'true');
